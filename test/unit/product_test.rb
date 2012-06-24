@@ -37,7 +37,7 @@ class ProductTest < ActiveSupport::TestCase
                           :price => 10
     product.title = 'Ololo'
     assert product.invalid?
-    assert_equal I18n.translate('errors.messages.too_short', :count => 10),
+    assert_equal "Product's title is too short! It must be at least 10 characters!",
                  product.errors[:title].join('; ')
                  
     product.title = 'OloloOlolo1'
