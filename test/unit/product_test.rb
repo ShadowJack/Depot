@@ -14,7 +14,7 @@ class ProductTest < ActiveSupport::TestCase
   end
   
   test "product price must be more than 0" do
-    product = Product.new :title => 'My title',
+    product = Product.new :title => 'My title123',
                           :description => 'My description!',
                           :image_url => 'img.jpg'
     product.price = -1
@@ -31,8 +31,21 @@ class ProductTest < ActiveSupport::TestCase
     assert product.valid?
   end
   
+  test "title length must be at least 10 characters" do
+    product = Product.new :description => 'description is describing...',
+                          :image_url => 'image.gif',
+                          :price => 10
+    product.title = 'Ololo'
+    assert product.invalid?
+    assert_equal I18n.translate('errors.messages.too_short', :count => 10),
+                 product.errors[:title].join('; ')
+                 
+    product.title = 'OloloOlolo1'
+    assert product.valid?
+  end
+  
   def new_product(image_url)
-    product = Product.new( :title => 'My title',
+    product = Product.new( :title => 'My title123123123',
                           :description => 'My description!',
                           :image_url => image_url,
                           :price => 1)
