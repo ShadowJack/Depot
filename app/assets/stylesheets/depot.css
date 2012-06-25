@@ -99,11 +99,18 @@
   padding-bottom: 1em;
   width: 16em;
   background: #141;
+  position: relative;
 }
 
 #side a {
   color: #bfb;
   font-size: small;
+}
+
+#side #datetime {
+  color: #99CC99;
+  position: relative;
+  top: 2em;
 }
 /* END:mainlayout */
 

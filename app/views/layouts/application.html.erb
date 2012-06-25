@@ -21,6 +21,10 @@
       <a href="http://www..../faq">Questions</a><br />
       <a href="http://www..../news">News</a><br />
       <a href="http://www..../contact">Contact</a><br />
+      <div id="datetime">
+      	<% @datetime = Time.now %>
+      	<%= @datetime.strftime("It's %d-%m-%Y %H:%M")%>
+      </div>
     </div>
     <div id="main">
       <%= yield %><!-- <label id="code.depot.e.include"/> -->
