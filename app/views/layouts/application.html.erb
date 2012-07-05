@@ -25,6 +25,9 @@
       	<% @datetime = Time.now %>
       	<%= @datetime.strftime("It's %d-%m-%Y %H:%M")%>
       </div>
+      <div id="cart">
+   	  	<%= render @cart %>
+   	  </div>
     </div>
     <div id="main">
       <%= yield %><!-- <label id="code.depot.e.include"/> -->
