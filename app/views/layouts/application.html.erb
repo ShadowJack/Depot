@@ -26,7 +26,9 @@
       	<%= @datetime.strftime("It's %d-%m-%Y %H:%M")%>
       </div>
       <div id="cart">
-   	  	<%= render @cart %>
+      	<% if not @cart == nil %>
+   	  		<%= render @cart %>
+   	  	<% end %>
    	  </div>
     </div>
     <div id="main">

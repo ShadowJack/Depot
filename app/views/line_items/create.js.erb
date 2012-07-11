@@ -1,0 +1,5 @@
+$('#notice').hide("slow");
+
+$('#cart').html("<%= escape_javascript(render(:partial => 'carts/cart', :locals =>{:cart => @cart})) %>");
+$('#current_item').fadeTo("slow", 0.33);
+$('#current_item').fadeTo("slow", 1);
