@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_filter :authenticate_user!
+  
   # GET /orders
   # GET /orders.json
   def index
@@ -48,7 +50,8 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.add_line_items_from_cart(current_cart)
-
+    
+    
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])

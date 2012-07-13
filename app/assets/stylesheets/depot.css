@@ -111,6 +111,9 @@
   color: #99CC99;
   position: relative;
 }
+#side #user_nav {
+	color:#559955;
+}
 /* END:mainlayout */
 
 /* An entry in the store catalog */

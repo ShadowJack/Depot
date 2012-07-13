@@ -21,6 +21,14 @@
       <a href="http://www..../faq">Questions</a><br />
       <a href="http://www..../news">News</a><br />
       <a href="http://www..../contact">Contact</a><br />
+      <div id="user_nav">
+      	<% if user_signed_in? %>
+      		<%= link_to "Sign_out", destroy_user_session_path, :method => :delete %>
+      	<% else %>
+      		<%= link_to "Sign_in", new_user_session_path %> <br />
+      		<%= link_to "Sign_up", new_user_registration_path %>
+      	<% end %>
+      </div>
       <div id="datetime">
       	<% @datetime = Time.now %>
       	<%= @datetime.strftime("It's %d-%m-%Y %H:%M")%>
