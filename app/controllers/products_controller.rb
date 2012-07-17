@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  authorize_resource
+  
   # GET /products
   # GET /products.json
   def index
@@ -25,7 +27,7 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
-
+    
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @product }

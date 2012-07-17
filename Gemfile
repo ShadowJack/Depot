@@ -42,3 +42,5 @@ gem 'will_paginate', '>=3.0.pre'
 gem 'devise'
 
 gem 'cancan'
+
+gem 'formtastic'

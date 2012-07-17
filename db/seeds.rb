@@ -53,3 +53,6 @@ Product.create(:title => 'Rails Test Prescriptions',
       </p>},
   :image_url => '/assets/rtp.jpg',
   :price => 43.75)
+Role.delete_all
+Role.create(:name => 'Customer')
+Role.create(:name => 'Seller')
