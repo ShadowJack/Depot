@@ -11,20 +11,14 @@
     <th></th>
   </tr>
 
-<% @orders.each do |order| %>
-  <tr>
-    <td><%= order.name %></td>
-    <td><%= order.address %></td>
-    <td><%= order.email %></td>
-    <td><%= order.pay_type %></td>
-    <td><%= link_to 'Показать', order %></td>
-    <td><%= link_to 'Редактировать', edit_order_path(order) %></td>
-    <td><%= link_to 'Удалить', order, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
-  </tr>
-<% end %>
+  <tbody id="orders">
+  	<%= render @orders %>
+  </tbody>
 </table>
 
 <br />
 
 <%= link_to 'Новый заказ', new_order_path %>
-<p><%= paginate @orders %></p>
+<div id="paginator">
+  <p><%= paginate @orders, :remote => true %></p>
+</div>
