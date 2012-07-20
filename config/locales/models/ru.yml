@@ -1,0 +1,10 @@
+ru:
+  activerecord:
+    models:
+      user: Пользователь
+      ability: Возможность
+      cart: Корзина
+      line_item: "Строка заказа"
+      order: Заказ
+      product: Товар
+      role: Роль
