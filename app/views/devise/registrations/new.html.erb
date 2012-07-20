@@ -1,4 +1,4 @@
-<h2>Sign up</h2>
+<h2>Регистрация</h2>
 
 <div class="depot_form">
 	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
@@ -6,7 +6,7 @@
   	<%= devise_error_messages! %>
 	
 	  <fieldset>
-	  <legend>Enter User Details</legend>
+	  <legend>Введите регистрационные данные</legend>
 	
 	  <div>
 	    <%= f.label :email %>:
@@ -14,15 +14,16 @@
 	  </div>
 	
 	  <div>
-	    <%= f.label :password, 'Password' %>:
+	    <%= f.label :password, 'Пароль' %>:
 	    <%= f.password_field :password, :size => 40 %>
 	  </div>
 	
 	  <div>
-	    <%= f.label :password_confirmation, 'Confirm' %>:
+	    <%= f.label :password_confirmation, 'Повторите пароль' %>:
 	    <%= f.password_field :password_confirmation, :size => 40 %>
 	  </div>
 	  
+	  <div class="roles">
 	  <% for role in Role.all %>
 		<div>
 		  <%= check_box_tag "user[role_ids][]", role.id, @user.roles.include?(role) %>
@@ -30,9 +31,10 @@
 		</div>
 	  <% end %>
 	  <%= hidden_field_tag "user[role_ids][]", "" %>
+	  </div>
 	  
 	  <div>
-	    <%= f.submit %>
+	    <%= f.submit "Вперёд" %>
 	  </div>
 	
 	  </fieldset>

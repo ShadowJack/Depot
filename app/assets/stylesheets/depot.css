@@ -228,5 +228,10 @@
 
 .depot_form div {
   margin: 0.5em 0;
+  margin-left: 1em;
+}
+
+.depot_form .roles {
+  margin-top: 2em;
 }
 /* END:form */

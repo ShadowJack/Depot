@@ -1,25 +1,26 @@
+<% if not notice.nil? %>
 <p id="notice"><%= notice %></p>
-
+<% end %>
 <p>
-  <b>Name:</b>
+  <b>Имя:</b>
   <%= @order.name %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b>Адрес:</b>
   <%= @order.address %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b>Электронная почта:</b>
   <%= @order.email %>
 </p>
 
 <p>
-  <b>Pay type:</b>
+  <b>Способ оплаты:</b>
   <%= @order.pay_type %>
 </p>
 
 
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<%= link_to 'Редактировать', edit_order_path(@order) %> |
+<%= link_to 'Назад', orders_path %>

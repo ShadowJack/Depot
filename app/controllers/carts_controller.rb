@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CartsController < ApplicationController
   # GET /carts
   # GET /carts.json
@@ -16,8 +17,8 @@ class CartsController < ApplicationController
     begin
       @cart = Cart.find(params[:id])
     rescue ActiveRecord::RecordNotFound
-      logger.error "Attempt to access invalid cart #{params[:id]}"
-      redirect_to store_url, :notice => 'Invalid cart' 
+      logger.error "Произошла попытка доступа к несуществующей корзине покупателя #{params[:id]}"
+      redirect_to store_url, :notice => 'Запрашиваемая корзина не существует' 
     else
       respond_to do |format|
         format.html # show.html.erb
@@ -49,7 +50,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
+        format.html { redirect_to @cart, notice: 'Ваша корзина успешно создана.' }
         format.json { render json: @cart, status: :created, location: @cart }
       else
         format.html { render action: "new" }
@@ -65,7 +66,7 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.update_attributes(params[:cart])
-        format.html { redirect_to @cart, notice: 'Cart was successfully updated.' }
+        format.html { redirect_to @cart, notice: 'Корзина была успешно обновлена.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -82,7 +83,7 @@ class CartsController < ApplicationController
     session[:cart_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to store_url, :notice => 'Your cart is currently empty' }
+      format.html { redirect_to store_url, :notice => 'Ваша корзина пуста.' }
       format.json { head :no_content }
     end
   end

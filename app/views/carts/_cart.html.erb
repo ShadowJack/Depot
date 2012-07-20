@@ -1,15 +1,15 @@
 <% unless cart.line_items.empty? %>
-<div class="cart_title">Your Cart</div>
+<div class="cart_title">Ваша корзина:</div>
 <table>
 	<%= render cart.line_items %>
 
   <tr class="total_line">
-    <td colspan="2">Total</td>
+    <td colspan="2">Итого</td>
     <td class="total_cell"><%= number_to_currency(cart.total_price) %></td>
   </tr>
 
 </table>
 
-<%= button_to 'Checkout', new_order_path, :method => :get %>
-<%= button_to 'Empty Cart', cart, :method => :delete, :confirm => 'Are you shure?' %>
+<%= button_to 'Оплатить', new_order_path, :method => :get %>
+<%= button_to 'Очистить корзину', cart, :method => :delete, :confirm => 'Вы уверены?' %>
 <% end %>

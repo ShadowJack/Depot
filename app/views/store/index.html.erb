@@ -2,9 +2,9 @@
 <p id="notice"><%= notice %></p>
 <% end %>
 
-<h1>Your Pragmatic Catalog</h1>
+<h1>Ваш Pragmatic Catalog</h1>
 <% if session[:counter] > 5 %>
-You have been there <%= pluralize( session[:counter], 'time') %>
+Поздравляем, вы были на этой странице <%= Russian.p( session[:counter].to_i, 'раз', 'раза', 'раз') %>
 <% end %>
 
 <% @products.each do |product| %>
@@ -13,8 +13,8 @@ You have been there <%= pluralize( session[:counter], 'time') %>
     <h3><%= product.title %></h3>
     <%= sanitize(product.description) %>
     <div class="price_line">
-      <span class="price"><%= number_to_currency product.price, :unit => "&pound" %></span>
-      <%= button_to 'Add to Cart', line_items_path(:product_id => product), "data-type" => "script", :remote => true %>
+      <span class="price"><%= number_to_currency product.price, :localr => :ru %></span>
+      <%= button_to 'Добавить в корзину', line_items_path(:product_id => product), "data-type" => "script", :remote => true %>
     </div>
   </div>
 <% end %>

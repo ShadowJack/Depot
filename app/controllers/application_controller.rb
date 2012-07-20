@@ -1,8 +1,9 @@
+# -*- encoding : utf-8 -*-
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
   rescue_from CanCan::AccessDenied do |exception|
-    redirect_to store_url, :notice => 'Sorry, access denied!'
+    redirect_to store_url, :notice => 'Извините, доступ запрещён!'
   end
   
   private 

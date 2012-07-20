@@ -44,3 +44,5 @@ gem 'devise'
 gem 'cancan'
 
 gem 'formtastic'
+
+gem 'russian', '~> 0.6.0'

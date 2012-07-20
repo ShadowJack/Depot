@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class OrdersController < ApplicationController
   before_filter :authenticate_user!
   
@@ -28,7 +29,7 @@ class OrdersController < ApplicationController
   def new
     @cart = current_cart
     if @cart.line_items.empty?
-      redirect_to store_url, :notice => 'Your cart is empty'
+      redirect_to store_url, :notice => 'Ваша корзина пуста.'
       return
     end
 
@@ -55,7 +56,7 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        format.html { redirect_to store_url, notice: 'Thank you for your order.' }
+        format.html { redirect_to store_url, notice: 'Благодарим за ваш заказ.' }
         format.json { render json: @order, status: :created, location: @order }
       else
         format.html { render action: "new" }
@@ -71,7 +72,7 @@ class OrdersController < ApplicationController
 
     respond_to do |format|
       if @order.update_attributes(params[:order])
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to @order, notice: 'Заказ был успешно обновлён.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

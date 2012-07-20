@@ -6,5 +6,5 @@
       <td><%= line_item.quantity %>&times;</td>
       <td><%= line_item.product.title %></td>
       <td class="item_price"><%= number_to_currency(line_item.total_price) %></td>
-      <td><%= link_to image_tag("iconDelete.gif"), line_item, :method => :delete, :confirm => 'Are you shure?' %></td>
+      <td><%= link_to image_tag("iconDelete.gif"), line_item, :method => :delete, :confirm => 'Вы уверены?' %></td>
 </tr>

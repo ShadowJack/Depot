@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 #---
 # Excerpted from "Agile Web Development with Rails",
 # published by The Pragmatic Bookshelf.
@@ -41,7 +42,7 @@ Product.create(:title => 'Programming Ruby 1.9',
   :price => 49.50)
 # . . .
 
-Product.create(:title => 'Rails Test Prescriptions',
+Product.create(:title => 'Rails Test Prescriptions по русски',
   :description => 
     %{<p>
         <em>Rails Test Prescriptions</em> is a comprehensive guide to testing
@@ -54,5 +55,5 @@ Product.create(:title => 'Rails Test Prescriptions',
   :image_url => '/assets/rtp.jpg',
   :price => 43.75)
 Role.delete_all
-Role.create(:name => 'Customer')
-Role.create(:name => 'Seller')
+Role.create(:name => 'Покупатель')
+Role.create(:name => 'Продавец')
