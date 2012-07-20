@@ -1,0 +1,6 @@
+$('#orders').fadeTo('fast', 0.3)
+$('#orders').html('<%= escape_javascript render(@orders) %>')
+$('#orders').fadeTo('fast', 1)
+$('#paginator').html('<%= escape_javascript paginate(@orders, :remote => true).to_s %>')
+
+
